@@ -7,7 +7,7 @@ import { useSEO } from '../hooks/useSEO.js'
 function Industries() {
   useSEO(
     'Industries We Serve | Medzinity',
-    'Our dedication to excellence extends to healthcare providers, insurance companies, pharma/medical device companies, and technology software solutions.'
+    'Our dedication to excellence extends to healthcare providers, law firms, insurance companies, pharma/medical device companies, and technology software solutions.'
   )
 
   return (
@@ -16,7 +16,7 @@ function Industries() {
         crumb="Industries"
         eyebrow="Industries"
         title="Industries we serve"
-        lede="Our dedication to excellence extends to healthcare providers, insurance companies, pharma/medical device companies, and technology software solutions."
+        lede="Our dedication to excellence extends to healthcare providers, law firms, insurance companies, pharma/medical device companies, and technology software solutions."
       />
 
       <section className="section">

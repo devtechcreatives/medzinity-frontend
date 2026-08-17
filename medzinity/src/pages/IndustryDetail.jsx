@@ -36,14 +36,26 @@ function IndustryDetail() {
             ))}
           </Reveal>
 
-          <Reveal delay={2} as="div" className="card">
-            <h3>What We Help With</h3>
-            <ul className="capability-list" style={{ marginTop: 18 }}>
-              {industry.capabilities.map((capability) => (
-                <li key={capability}>{capability}</li>
-              ))}
-            </ul>
-          </Reveal>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+            {industry.expertise && (
+              <Reveal delay={2} as="div" className="card">
+                <h3>Areas of Expertise</h3>
+                <ul className="capability-list" style={{ marginTop: 18 }}>
+                  {industry.expertise.map((area) => (
+                    <li key={area}>{area}</li>
+                  ))}
+                </ul>
+              </Reveal>
+            )}
+            <Reveal delay={3} as="div" className="card">
+              <h3>What We Help With</h3>
+              <ul className="capability-list" style={{ marginTop: 18 }}>
+                {industry.capabilities.map((capability) => (
+                  <li key={capability}>{capability}</li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
         </div>
       </section>
 

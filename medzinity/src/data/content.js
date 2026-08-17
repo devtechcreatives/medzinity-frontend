@@ -30,6 +30,7 @@ export const nav = [
     label: 'Industries',
     submenu: [
       { to: '/industries/healthcare-providers', label: 'Healthcare Providers' },
+      { to: '/industries/law-firms', label: 'Law Firms' },
       { to: '/industries/insurance-companies', label: 'Insurance Companies' },
       { to: '/industries/pharma-medical-device-companies', label: 'Pharma / Medical Device Companies' },
       { to: '/industries/technology-software-solutions', label: 'Technology & Software Solutions' },
@@ -42,6 +43,7 @@ export const nav = [
       { to: '/services/medical-records-processing', label: 'Medical Records Processing' },
       { to: '/services/revenue-cycle-management', label: 'Revenue Cycle Management' },
       { to: '/services/pharmacovigilance', label: 'Pharmacovigilance' },
+      { to: '/services/medico-legal-services', label: 'Medico-Legal Services' },
       { to: '/services/product-life-cycle-management', label: 'Product Life Cycle Management' },
     ],
   },
@@ -79,7 +81,7 @@ export const stats = [
 // map to a real destination page on medzinity.com; the rest are shown unlinked.
 export const clientele = [
   { label: 'Healthcare providers', to: '/industries/healthcare-providers' },
-  { label: 'Law firms', to: null },
+  { label: 'Law firms', to: '/industries/law-firms' },
   { label: 'Insurance companies', to: '/industries/insurance-companies' },
   { label: 'Pharma companies', to: '/industries/pharma-medical-device-companies' },
   { label: 'Medical device companies', to: '/industries/pharma-medical-device-companies' },
@@ -173,6 +175,63 @@ export const services = [
     ],
   },
   {
+    slug: 'medico-legal-services',
+    icon: 'IconBuilding',
+    title: 'Medico-Legal Services',
+    shortDesc: 'We help law firms, medico-legal consultants, and insurance companies turn complex medical records into structured, defensible evidence for malpractice, injury, and insurance claims.',
+    intro: 'Our medico-legal services help legal and insurance teams transform complex medical records into structured, defensible evidence — supporting cases from intake through trial. Services include:',
+    items: [
+      {
+        title: 'Medical Chronology',
+        desc: "A sequential timeline of a patient's medical history — past and present illnesses, diagnoses, treatments, procedures, and medications — organized so attorneys, medical experts, and legal parties can easily understand and analyze the case. We build chronologies for medical malpractice, personal injury, mass tort, workers' compensation, product liability, and insurance claims, identifying deviations from standard care and the causation link between events and harm.",
+      },
+      {
+        title: 'Medical Opinion',
+        desc: 'Independent, unbiased expert medical evaluations backed by professionals across 40+ specialties, from cardiology and orthopedics to neurosurgery and psychiatry. We provide medical opinions for personal injury claims, disability determinations, workers’ compensation, malpractice investigations, Social Security disability, insurance disputes, litigation support, and treatment plan assessments.',
+      },
+      {
+        title: 'Narrative Summary',
+        desc: "A comprehensive, easy-to-read report summarizing a patient's medical history and treatment in plain language, covering the date and nature of injury, prior history, treatment progression, and condition at final visit. Used for personal injury claims, malpractice litigation, workers' compensation, Social Security Disability, insurance claims, mediation, and life care planning.",
+      },
+      {
+        title: 'Settlement Demand Letters',
+        desc: 'Persuasive, well-documented demand letters built from a thorough review of accident reports, liability evidence, witness statements, and medical records — covering facts and liability, injury and treatment summaries, medical expenses, property damage, and lifestyle impact. Tailored across personal injury, malpractice, workers’ compensation, auto accidents, product liability, and nursing home negligence claims.',
+      },
+      {
+        title: 'Medical Data Abstraction',
+        desc: 'Extraction and structuring of key clinical information — diagnoses, treatments, medications — from raw medical records, removing extraneous detail while preserving accuracy. Supports legal proceedings, regulatory audits, medical literature reviews, and case management, with a rigorous quality-verification step on every abstraction.',
+      },
+      {
+        title: 'Deposition Summaries',
+        desc: 'Concise, well-organized summaries of deposition transcripts — available in page-line, topic-by-topic, or chronological formats — capturing testimony, admissions, and contradictions. Used from discovery through trial preparation to help attorneys assess witness credibility and prepare arguments, with multilingual support for cross-jurisdictional cases.',
+      },
+      {
+        title: 'DNA Analysis and Reporting',
+        desc: 'Forensic, paternity, and ancestry DNA analysis backed by trained genetic professionals, with results translated from complex genetic data into clear, actionable reports. Supports investigations, legal proceedings, and personal matters requiring accurate biological relationship or identity evidence.',
+      },
+      {
+        title: 'Life Care Planning',
+        desc: 'A comprehensive evaluation of the long-term medical and support needs of individuals with catastrophic injuries or chronic conditions, combining medical record review, physician statements, and interdisciplinary expertise to project future care and cost. Used by attorneys, insurers, and medical professionals to support settlement and litigation decisions.',
+      },
+      {
+        title: 'APS Summarization',
+        desc: "Attending Physician's Statement summarization that distills extensive medical records and physician statements into crisp, underwriting-ready summaries, highlighting the medical information most relevant to risk assessment. Supports life, health, disability, long-term care, critical illness, and reinsurance underwriting.",
+      },
+      {
+        title: 'Medical Illustrations and Videos',
+        desc: 'Anatomically accurate medical illustrations and videos depicting diagnoses, procedures, injuries, and treatments — built to simplify complex medical concepts for legal presentations, insurance evaluations, medical education, and patient communication in malpractice, personal injury, and product liability cases.',
+      },
+      {
+        title: 'Paralegal Services',
+        desc: 'Case management support spanning legal research, document preparation, case organization, process service, mobile notary, witness statements, and medical summary collaboration — specializing in medical record review for personal injury, medical malpractice, and workers’ compensation matters.',
+      },
+      {
+        title: 'Technical Services',
+        desc: 'A suite of tools that make lengthy medical records easier to navigate: Med-Term pop-up definitions for medical terminology, organized provider lists, chronological PDF sorting and merging, bookmarked summaries with single-click navigation, and hyperlinked page references — built to speed up review and reduce errors.',
+      },
+    ],
+  },
+  {
     slug: 'product-life-cycle-management',
     icon: 'IconLifecycle',
     title: 'Product Life Cycle Management',
@@ -205,6 +264,23 @@ export const industries = [
       'A healthcare provider is any facility or practice where you receive and are billed for a product or service related to your personal health.',
       'Healthcare providers include hospitals, private clinics, and pharmacies as well as specialized care providers like nursing homes, in-home caretakers, and chiropractors.',
       'We help the healthcare providers to initiate good documentation process, methodologies & tools for adhering to standard operating protocols to provide ethical healthcare in far-flung parts. Also, our team of healers provide moral support and coping therapies to empower people who have been affected by medical negligence in their lives. We motivate and change their lives in a better way. Good change for a good cause.',
+    ],
+  },
+  {
+    slug: 'law-firms',
+    icon: 'IconBuilding',
+    title: 'Law Firms',
+    shortDesc: 'We help law firms, medico-legal consultants, and individual attorneys turn complex medical records into clear, defensible evidence for medical malpractice, personal injury, workers’ compensation, mass tort, product liability, and insurance claims.',
+    expertise: ['Medical Malpractice', 'Personal Injury', 'Workers’ Compensation', 'Mass Tort', 'Product Liability', 'Insurance Claims'],
+    capabilities: ['Medical Chronology', 'Medical Opinion', 'Narrative Summary', 'Settlement Demand Letters', 'Medical Data Abstraction', 'Deposition Summaries', 'DNA Analysis and Reporting', 'Life Care Planning', 'APS Summarization', 'Medical Illustrations and Videos', 'Paralegal Services', 'Technical Services'],
+    quotes: [
+      'Medical records are the keystone of every claim — they establish causation, quantify damages, and provide the evidence expert testimony is built on.',
+    ],
+    body: [
+      'We work with law firms, medico-legal consultants, and individual attorneys to turn complex, high-volume medical records into clear, defensible evidence — helping legal teams build stronger cases, negotiate faster settlements, and win claims with confidence.',
+      'In medical malpractice matters, we help establish the four essential elements of a claim — duty, breach of duty, causation, and damages — by reviewing records for treatment sequences, deviations from the standard of care, and patterns of negligence across cardiology, neurosurgery, orthopedics, obstetrics, oncology, psychiatry, and 30+ other specialties, including anesthesia errors, misdiagnosis, surgical negligence, medication errors, childbirth injuries, and wrongful death claims.',
+      'For personal injury, workers’ compensation, mass tort, and product liability cases, we analyze incident descriptions, injury specifics, treatment timelines, and income loss to document causation, quantify damages, and support expert testimony — from motor vehicle accidents and premises liability to workplace injuries, pharmaceutical and device mass torts, and defective product claims.',
+      'For insurance companies, our medical records review helps adjusters validate claims, detect inconsistencies and fraud, assess risk, and reach fair, timely settlements. Every engagement is backed by a secure, HIPAA and HITECH compliant portal and a team of US-based paralegals, doctors, and medico-legal experts.',
     ],
   },
   {

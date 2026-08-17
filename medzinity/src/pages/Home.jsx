@@ -7,8 +7,24 @@ import InsightCard from '../components/InsightCard.jsx'
 import SectionHeader from '../components/SectionHeader.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
+import HeroCarousel from '../components/HeroCarousel.jsx'
+import IndustryShowcase from '../components/IndustryShowcase.jsx'
 import * as Icons from '../components/icons.jsx'
 import { useSEO } from '../hooks/useSEO.js'
+
+import heroConsult from '../assets/hero/carousel-1-consult.webp'
+import heroStethoscope from '../assets/hero/carousel-2-stethoscope.webp'
+import heroXray from '../assets/hero/carousel-3-xray.webp'
+import heroCouple from '../assets/hero/carousel-4-couple.webp'
+import cardLawFirms from '../assets/cards/card-law-firms.webp'
+import cardMedicoLegal from '../assets/cards/card-medico-legal.webp'
+import cardInsight from '../assets/cards/card-insight.webp'
+import cardInsurance from '../assets/cards/card-insurance.webp'
+import tileHealthcareProviders from '../assets/industries/tile-healthcare-providers.webp'
+import tileLawFirms from '../assets/industries/tile-law-firms.webp'
+import tileInsuranceCompanies from '../assets/industries/tile-insurance-companies.webp'
+import tilePharma from '../assets/industries/tile-pharma-medical-device.webp'
+import tileTechnology from '../assets/industries/tile-technology-software.webp'
 
 function Home() {
   useSEO(
@@ -19,40 +35,67 @@ function Home() {
   const featuredServices = services.slice(0, 3)
   const featuredInsights = insights.slice(0, 3)
 
+  const heroSlides = [
+    {
+      image: heroConsult,
+      eyebrow: 'Redefining Healthcare Solutions',
+      title: <>Innovate. <span className="accent">Empower.</span> Evolve.</>,
+      lede: 'However you define success, Medzinity delivers it with technology and data-driven expertise — across the healthcare and medico-legal ecosystem.',
+      primaryLabel: 'Get a Quote',
+      primaryTo: '/contact-us',
+      secondaryLabel: 'Discover',
+      secondaryTo: '/about-us',
+    },
+    {
+      image: heroStethoscope,
+      eyebrow: 'Healthcare Support Services',
+      title: <>Support built for <span className="accent">every step</span> of care</>,
+      lede: 'From medical records processing to revenue cycle management, we help healthcare providers run leaner, more accurate operations.',
+      primaryLabel: 'Get a Quote',
+      primaryTo: '/contact-us',
+      secondaryLabel: 'View Services',
+      secondaryTo: '/services',
+    },
+    {
+      image: heroXray,
+      eyebrow: 'Medico-Legal Services',
+      title: <>Evidence that holds up <span className="accent">in court</span></>,
+      lede: 'Medical chronologies, expert opinions, and deposition summaries that turn complex records into defensible case evidence.',
+      primaryLabel: 'Get a Quote',
+      primaryTo: '/contact-us',
+      secondaryLabel: 'Explore Medico-Legal',
+      secondaryTo: '/services/medico-legal-services',
+    },
+    {
+      image: heroCouple,
+      eyebrow: 'Industries We Serve',
+      title: <>One partner, <span className="accent">every stakeholder</span></>,
+      lede: 'Healthcare providers, law firms, insurers, and pharma companies all rely on Medzinity to turn data into decisions.',
+      primaryLabel: 'Get a Quote',
+      primaryTo: '/contact-us',
+      secondaryLabel: 'View Industries',
+      secondaryTo: '/industries',
+    },
+  ]
+
+  const heroCards = [
+    { image: cardLawFirms, tag: 'Industry', title: 'Law Firms: turning medical records into defensible evidence', to: '/industries/law-firms' },
+    { image: cardMedicoLegal, tag: 'Service', title: 'Medico-Legal Services — from chronology to trial-ready evidence', to: '/services/medico-legal-services' },
+    { image: cardInsight, tag: featuredInsights[0].category, title: featuredInsights[0].title, href: featuredInsights[0].url },
+    { image: cardInsurance, tag: 'Industry', title: 'Insurance Companies: faster claims, fewer errors', to: '/industries/insurance-companies' },
+  ]
+
+  const industryTiles = [
+    { label: 'Healthcare Providers', image: tileHealthcareProviders, to: '/industries/healthcare-providers' },
+    { label: 'Law Firms', image: tileLawFirms, to: '/industries/law-firms' },
+    { label: 'Insurance Companies', image: tileInsuranceCompanies, to: '/industries/insurance-companies' },
+    { label: 'Pharma / Medical Device', image: tilePharma, to: '/industries/pharma-medical-device-companies' },
+    { label: 'Technology & Software', image: tileTechnology, to: '/industries/technology-software-solutions' },
+  ]
+
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <span className="eyebrow">Redefining Healthcare Solutions</span>
-            <h1>Innovate. Empower. Evolve.</h1>
-            <p className="lede">
-              Medzinity is a technology & data driven company providing
-              healthcare support services and products to enhance and optimize
-              the healthcare ecosystem.
-            </p>
-            <div className="hero-actions">
-              <Button to="/about-us">Learn More</Button>
-              <Link to="/services" className="btn-link">
-                Explore Our Services <Icons.IconArrow width={15} height={15} />
-              </Link>
-            </div>
-            <div className="hero-trust">
-              <div><strong>10+</strong>Years of Experience</div>
-              <div><strong>120+</strong>Clients</div>
-              <div><strong>2,830+</strong>Projects</div>
-            </div>
-          </div>
-
-          <div className="hero-art" aria-hidden="true">
-            <div className="glow g1" />
-            <div className="glow g2" />
-            <div className="hero-chip c1"><span className="dot" /> 100% Compliance</div>
-            <div className="hero-chip c2"><span className="dot" /> Healthcare Data Analytics</div>
-            <div className="hero-chip c3"><span className="dot" /> Innovation & Research</div>
-          </div>
-        </div>
-      </section>
+      <HeroCarousel slides={heroSlides} cards={heroCards} />
 
       <section className="section">
         <div className="container split-section">
@@ -141,7 +184,19 @@ function Home() {
 
       <section className="section">
         <div className="container">
-          <SectionHeader eyebrow="Who We Serve" title="Clientele and industries we serve" />
+          <SectionHeader eyebrow="Who We Serve" title="Expert industry knowledge" />
+          <IndustryShowcase
+            eyebrow="Industries"
+            title="Purpose-built support for every part of the healthcare ecosystem."
+            lede="Our specialists are skilled, efficient, and attuned to the compliance and workflow needs of each industry we serve."
+            items={industryTiles}
+          />
+        </div>
+      </section>
+
+      <section className="section section-soft">
+        <div className="container">
+          <SectionHeader eyebrow="Clientele" title="Who we work with" />
           <div className="industry-grid">
             {clientele.map(({ label, to }) =>
               to ? (

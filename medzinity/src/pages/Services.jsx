@@ -7,7 +7,7 @@ import { useSEO } from '../hooks/useSEO.js'
 function Services() {
   useSEO(
     'Services | Medzinity',
-    'Medzinity services: Medical Records Processing, Revenue Cycle Management, Pharmacovigilance, and Product Life Cycle Management.'
+    'Medzinity services: Medical Records Processing, Revenue Cycle Management, Pharmacovigilance, Medico-Legal Services, and Product Life Cycle Management.'
   )
 
   return (
@@ -16,7 +16,7 @@ function Services() {
         crumb="Services"
         eyebrow="Services"
         title="Healthcare support services purpose-built for scale"
-        lede="From medical records processing to pharmacovigilance, every service is built to enhance and optimize the healthcare ecosystem."
+        lede="From medical records processing to pharmacovigilance and medico-legal support, every service is built to enhance and optimize the healthcare ecosystem."
       />
 
       <section className="section">
