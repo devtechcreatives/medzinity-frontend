@@ -10,6 +10,45 @@ import Button from '../components/Button.jsx'
 import * as Icons from '../components/icons.jsx'
 import { useSEO } from '../hooks/useSEO.js'
 
+const bannerCards = [
+  {
+    image: '/images/card-research.jpg',
+    tag: 'Research',
+    title: 'Clinical Research & Trials',
+    desc: 'End-to-end support for clinical research organizations with data-driven insights and regulatory compliance.',
+  },
+  {
+    image: '/images/card-analytics.jpg',
+    tag: 'Analytics',
+    title: 'Healthcare Data Analytics',
+    desc: 'Transform raw healthcare data into actionable intelligence that drives better patient outcomes.',
+  },
+  {
+    image: '/images/card-records.jpg',
+    tag: 'Records',
+    title: 'Medical Records Processing',
+    desc: 'Accurate and efficient medical records management ensuring compliance and accessibility.',
+  },
+  {
+    image: '/images/card-pharma.jpg',
+    tag: 'Pharma',
+    title: 'Pharmacovigilance',
+    desc: 'Comprehensive drug safety monitoring and adverse event reporting for pharmaceutical companies.',
+  },
+  {
+    image: '/images/card-patient.jpg',
+    tag: 'Patient Care',
+    title: 'Revenue Cycle Management',
+    desc: 'Optimize your revenue cycle with our technology-driven solutions for healthcare providers.',
+  },
+  {
+    image: '/images/card-compliance.jpg',
+    tag: 'Compliance',
+    title: 'Regulatory Compliance',
+    desc: 'Navigate complex healthcare regulations with expert guidance and technology-enabled solutions.',
+  },
+]
+
 function Home() {
   useSEO(
     'Medzinity | Healthcare Support Services & Data Analytics',
@@ -21,6 +60,79 @@ function Home() {
 
   return (
     <>
+      {/* ── Full-screen Banner + Overlapping Cards ── */}
+      <div className="image-banner-section">
+        <section className="image-banner">
+          <div className="container image-banner-inner">
+            <div className="image-banner-content">
+              <span className="image-banner-eyebrow">Redefining Healthcare Solutions</span>
+              <h1 className="image-banner-title">
+                Innovate. Empower.<br />Evolve.
+              </h1>
+              <p className="image-banner-desc">
+                Medzinity is a technology & data driven company providing
+                healthcare support services and products to enhance and optimize
+                the healthcare ecosystem.
+              </p>
+              <div className="image-banner-actions">
+                <Button to="/about-us">Learn More</Button>
+                <Link to="/services" className="btn-link image-banner-link">
+                  Explore Our Services <Icons.IconArrow width={15} height={15} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="banner-mosaic" aria-hidden="true">
+              <div className="mosaic-col mosaic-col-1">
+                <div className="mosaic-img m-tall">
+                  <img src="/images/banner-medical.jpg" alt="" />
+                </div>
+                <div className="mosaic-img m-short">
+                  <img src="/images/banner-data.jpg" alt="" />
+                </div>
+              </div>
+              <div className="mosaic-col mosaic-col-2">
+                <div className="mosaic-img m-short">
+                  <img src="/images/banner-doctor.jpg" alt="" />
+                </div>
+                <div className="mosaic-img m-tall">
+                  <img src="/images/banner-lab.jpg" alt="" />
+                </div>
+              </div>
+              <div className="mosaic-col mosaic-col-3">
+                <div className="mosaic-img m-med">
+                  <img src="/images/banner-team.jpg" alt="" />
+                </div>
+                <div className="mosaic-img m-med">
+                  <img src="/images/card-pharma.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* cards overlap the banner bottom */}
+        <div className="container overlap-cards-wrap">
+          <div className="img-cards-grid">
+            {bannerCards.map((card, i) => (
+              <Reveal as="div" className="img-card" key={card.title} delay={(i % 3) + 1}>
+                <div className="img-card-image">
+                  <img src={card.image} alt={card.title} loading="lazy" />
+                  <span className="img-card-tag">{card.tag}</span>
+                </div>
+                <div className="img-card-body">
+                  <h3>{card.title}</h3>
+                  <p>{card.desc}</p>
+                  <Link to="/services" className="card-link">
+                    Learn More <Icons.IconArrow width={14} height={14} />
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <section className="hero">
         <div className="container hero-grid">
           <div>
