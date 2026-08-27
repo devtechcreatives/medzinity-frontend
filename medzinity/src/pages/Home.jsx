@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import { whatWeDo, services, clientele, insights } from '../data/content.js'
+import { whatWeDo, services, insights } from '../data/content.js'
 import CTASection from '../components/CTASection.jsx'
 import StatsSection from '../components/StatsSection.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
@@ -9,13 +8,10 @@ import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
 import HeroCarousel from '../components/HeroCarousel.jsx'
 import IndustryShowcase from '../components/IndustryShowcase.jsx'
+import ClienteleOrbit from '../components/ClienteleOrbit.jsx'
 import * as Icons from '../components/icons.jsx'
 import { useSEO } from '../hooks/useSEO.js'
 
-import heroConsult from '../assets/hero/carousel-1-consult.webp'
-import heroStethoscope from '../assets/hero/carousel-2-stethoscope.webp'
-import heroXray from '../assets/hero/carousel-3-xray.webp'
-import heroCouple from '../assets/hero/carousel-4-couple.webp'
 import cardLawFirms from '../assets/cards/card-law-firms.webp'
 import cardMedicoLegal from '../assets/cards/card-medico-legal.webp'
 import cardInsight from '../assets/cards/card-insight.webp'
@@ -25,6 +21,15 @@ import tileLawFirms from '../assets/industries/tile-law-firms.webp'
 import tileInsuranceCompanies from '../assets/industries/tile-insurance-companies.webp'
 import tilePharma from '../assets/industries/tile-pharma-medical-device.webp'
 import tileTechnology from '../assets/industries/tile-technology-software.webp'
+
+// Hero backgrounds are picked up straight from src/assets/hero/ in filename
+// order — drop new images in and they become slide backgrounds, no code change.
+// While the folder is empty every slide falls back to the navy gradient.
+const heroImages = Object.entries(
+  import.meta.glob('../assets/hero/*.{webp,avif,jpg,jpeg,png}', { eager: true, import: 'default' })
+)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, src]) => src)
 
 function Home() {
   useSEO(
@@ -37,7 +42,7 @@ function Home() {
 
   const heroSlides = [
     {
-      image: heroConsult,
+      image: heroImages[0],
       eyebrow: 'Redefining Healthcare Solutions',
       title: <>Innovate. <span className="accent">Empower.</span> Evolve.</>,
       lede: 'However you define success, Medzinity delivers it with technology and data-driven expertise — across the healthcare and medico-legal ecosystem.',
@@ -47,7 +52,7 @@ function Home() {
       secondaryTo: '/about-us',
     },
     {
-      image: heroStethoscope,
+      image: heroImages[1],
       eyebrow: 'Healthcare Support Services',
       title: <>Support built for <span className="accent">every step</span> of care</>,
       lede: 'From medical records processing to revenue cycle management, we help healthcare providers run leaner, more accurate operations.',
@@ -57,7 +62,7 @@ function Home() {
       secondaryTo: '/services',
     },
     {
-      image: heroXray,
+      image: heroImages[2],
       eyebrow: 'Medico-Legal Services',
       title: <>Evidence that holds up <span className="accent">in court</span></>,
       lede: 'Medical chronologies, expert opinions, and deposition summaries that turn complex records into defensible case evidence.',
@@ -67,7 +72,7 @@ function Home() {
       secondaryTo: '/services/medico-legal-services',
     },
     {
-      image: heroCouple,
+      image: heroImages[3],
       eyebrow: 'Industries We Serve',
       title: <>One partner, <span className="accent">every stakeholder</span></>,
       lede: 'Healthcare providers, law firms, insurers, and pharma companies all rely on Medzinity to turn data into decisions.',
@@ -196,18 +201,12 @@ function Home() {
 
       <section className="section section-soft">
         <div className="container">
-          <SectionHeader eyebrow="Clientele" title="Who we work with" />
-          <div className="industry-grid">
-            {clientele.map(({ label, to }) =>
-              to ? (
-                <Link to={to} className="industry-chip linked" key={label}>
-                  {label} <Icons.IconArrow width={14} height={14} />
-                </Link>
-              ) : (
-                <span className="industry-chip static" key={label}>{label}</span>
-              )
-            )}
-          </div>
+          <SectionHeader
+            eyebrow="Clientele"
+            title="Who we work with"
+            description="Providers, attorneys, insurers and life-science teams all work from the same medical record. Medzinity sits in the middle of that exchange — turning one set of data into the format each side can act on."
+          />
+          <ClienteleOrbit />
         </div>
       </section>
 

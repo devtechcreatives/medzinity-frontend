@@ -21,13 +21,16 @@ function HeroCarousel({ slides, cards }) {
     <section className="hero-banner">
       <div className="hero-banner-shape" aria-hidden="true">
         <div className="hero-banner-slides">
-          {slides.map((s, i) => (
-            <div
-              key={s.image}
-              className={`hero-slide-bg ${i === active ? 'is-active' : ''}`}
-              style={{ backgroundImage: `url(${s.image})` }}
-            />
-          ))}
+          {/* A slide with no image simply lets the shape's gradient show through. */}
+          {slides.map((s, i) =>
+            s.image ? (
+              <div
+                key={s.eyebrow}
+                className={`hero-slide-bg ${i === active ? 'is-active' : ''}`}
+                style={{ backgroundImage: `url(${s.image})` }}
+              />
+            ) : null
+          )}
         </div>
         <div className="hero-banner-scrim" />
       </div>
@@ -55,7 +58,7 @@ function HeroCarousel({ slides, cards }) {
               <div className="hero-dots" role="tablist" aria-label="Slides">
                 {slides.map((s, i) => (
                   <button
-                    key={s.image}
+                    key={s.eyebrow}
                     type="button"
                     role="tab"
                     aria-selected={i === active}

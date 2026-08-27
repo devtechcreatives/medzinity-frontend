@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { nav, brand } from '../data/content.js'
 import { IconChevronDown, IconClose } from './icons.jsx'
+import logo from '../assets/logo/medzinity-logo.png'
 
 function MobileMenu({ open, onClose }) {
   const [openSection, setOpenSection] = useState(null)
@@ -43,7 +44,7 @@ function MobileMenu({ open, onClose }) {
       <button type="button" className="mobile-backdrop" aria-label="Close navigation" onClick={onClose} />
       <div className="mobile-panel" ref={panelRef}>
         <div className="mobile-panel-head">
-          <span className="brand-word">Medzinity</span>
+          <img src={logo} className="brand-logo brand-logo-sm" alt="Medzinity" width="300" height="65" />
           <button type="button" className="mobile-close" onClick={onClose} aria-label="Close navigation">
             <IconClose width={20} height={20} />
           </button>

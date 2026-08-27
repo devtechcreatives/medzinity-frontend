@@ -4,6 +4,7 @@ import { nav } from '../data/content.js'
 import { IconMenu, IconClose } from './icons.jsx'
 import MegaMenu from './MegaMenu.jsx'
 import MobileMenu from './MobileMenu.jsx'
+import logo from '../assets/logo/medzinity-logo.png'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -53,21 +54,7 @@ function Navbar() {
       <a href="#main-content" className="skip-link">Skip to content</a>
       <div className="container nav-inner">
         <Link to="/" className="brand" aria-label="Medzinity home" onClick={() => setOpenMenu(null)}>
-          <svg className="brand-mark" width="34" height="20" viewBox="0 0 34 20" fill="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="brandGrad" x1="0" y1="0" x2="34" y2="20" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#2ea3f2" />
-                <stop offset="1" stopColor="#0f2c44" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M9 4a6 6 0 1 0 0 12 8.2 8.2 0 0 0 6-2.7 8.2 8.2 0 0 0 6 2.7 6 6 0 1 0 0-12 8.2 8.2 0 0 0-6 2.7A8.2 8.2 0 0 0 9 4Z"
-              stroke="url(#brandGrad)"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-            />
-          </svg>
-          <span className="brand-word">Medzinity</span>
+          <img src={logo} className="brand-logo" alt="Medzinity" width="300" height="65" />
         </Link>
 
         <nav className="nav-links" aria-label="Primary">

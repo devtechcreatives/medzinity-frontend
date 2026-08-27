@@ -24,7 +24,6 @@ export const nav = [
       { to: '/about-us#Joinus', label: 'Join Us' },
     ],
   },
-  { to: '/medzian-community', label: 'Medzian Community' },
   {
     to: '/industries',
     label: 'Industries',
@@ -48,7 +47,6 @@ export const nav = [
     ],
   },
   { to: '/insights', label: 'Insights' },
-  { to: '/contact-us', label: 'Contact Us' },
 ]
 
 // "What We Do" — used on Home and About Us (#whatwedo)
@@ -77,15 +75,16 @@ export const stats = [
   { value: 100, suffix: '%', label: 'Compliance' },
 ]
 
-// Home page "Clientele and Industries we serve" strip — only the first three
-// map to a real destination page on medzinity.com; the rest are shown unlinked.
+// Home page "Clientele" orbit — the parties Medzinity sits between. Rendered in
+// array order clockwise from the top, so the sequence here is the layout.
+// Clinical research has no destination page on medzinity.com, so it stays unlinked.
 export const clientele = [
-  { label: 'Healthcare providers', to: '/industries/healthcare-providers' },
-  { label: 'Law firms', to: '/industries/law-firms' },
-  { label: 'Insurance companies', to: '/industries/insurance-companies' },
-  { label: 'Pharma companies', to: '/industries/pharma-medical-device-companies' },
-  { label: 'Medical device companies', to: '/industries/pharma-medical-device-companies' },
-  { label: 'Clinical research', to: null },
+  { label: 'Healthcare providers', icon: 'IconHospital', to: '/industries/healthcare-providers' },
+  { label: 'Law firms', icon: 'IconBuilding', to: '/industries/law-firms' },
+  { label: 'Insurance companies', icon: 'IconShield', to: '/industries/insurance-companies' },
+  { label: 'Pharma companies', icon: 'IconFlask', to: '/industries/pharma-medical-device-companies' },
+  { label: 'Medical device companies', icon: 'IconPulse', to: '/industries/pharma-medical-device-companies' },
+  { label: 'Clinical research', icon: 'IconBeaker', to: null },
 ]
 
 export const services = [
@@ -349,22 +348,6 @@ export const ensure = [
   { icon: 'IconCheck', title: 'Process Efficiency', desc: 'Documented processes engineered for efficiency across every engagement.' },
   { icon: 'IconClipboard', title: 'Quality, Technical & Administrative Safeguards', desc: 'Layered safeguards protecting the quality and integrity of every deliverable.' },
   { icon: 'IconGlobe', title: 'GDPR Compliant', desc: 'Data handling practices aligned to GDPR compliance requirements.' },
-]
-
-// Medzian Community
-export const communityPillars = [
-  { title: 'Volunteer participation', desc: 'We encourage our team members to volunteer their time and skills to help plan and execute community activities. This promotes a sense of ownership and involvement among community members.' },
-  { title: 'Recognition and Rewards', desc: 'Acknowledge and reward active participation and contributions from community members. This could include certificates, public recognition, or other forms of appreciation.' },
-  { title: 'Activities and Events', desc: 'At Medzinity, we plan a variety of activities and events that align with the community’s purpose and goals. These could include workshops, seminars, fitness classes, charity initiatives, team-building outings, and social gatherings.' },
-  { title: 'Feedback and Adaptation', desc: 'We regularly seek feedback from community members to gauge their satisfaction and gather ideas for improvement. Be open to making changes based on the feedback received.' },
-  { title: 'Legal and Ethical Considerations', desc: 'Ensure that the community’s activities align with company policies, legal requirements, and ethical standards.' },
-]
-
-export const communityActivities = [
-  'Wellness Workshops', 'Lunch and learn sessions', 'Walkathon', 'Book club & podcasts',
-  'Volunteer & Charity Initiatives', 'Skill sharing workshops', 'Innovation Brainstorms',
-  'Career development seminars', 'Team building activities', 'Cultural celebrations',
-  'Individual Development programs', 'Sports and fitness',
 ]
 
 // Insights — real posts, linking out to their live medzinity.com URLs

@@ -2,9 +2,9 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import IntroLoader from './components/IntroLoader.jsx'
 import Home from './pages/Home.jsx'
 import AboutUs from './pages/AboutUs.jsx'
-import MedzianCommunity from './pages/MedzianCommunity.jsx'
 import Services from './pages/Services.jsx'
 import ServiceDetail from './pages/ServiceDetail.jsx'
 import Industries from './pages/Industries.jsx'
@@ -31,13 +31,13 @@ function ScrollToTop() {
 function App() {
   return (
     <>
+      <IntroLoader />
       <ScrollToTop />
       <Navbar />
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/medzian-community" element={<MedzianCommunity />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/industries" element={<Industries />} />

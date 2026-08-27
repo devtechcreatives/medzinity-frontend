@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { brand, industries, services } from '../data/content.js'
+import logo from '../assets/logo/medzinity-logo.png'
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -8,16 +9,9 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-top">
         <div className="footer-brand">
-          <Link to="/" className="brand">
-            <svg className="brand-mark" width="34" height="20" viewBox="0 0 34 20" fill="none" aria-hidden="true">
-              <path
-                d="M9 4a6 6 0 1 0 0 12 8.2 8.2 0 0 0 6-2.7 8.2 8.2 0 0 0 6 2.7 6 6 0 1 0 0-12 8.2 8.2 0 0 0-6 2.7A8.2 8.2 0 0 0 9 4Z"
-                stroke="#2ea3f2"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span className="brand-word">Medzinity</span>
+          <Link to="/" className="brand" aria-label="Medzinity home">
+            {/* Same lockup as the navbar, knocked out to white for the navy footer. */}
+            <img src={logo} className="brand-logo brand-logo-inverse" alt="Medzinity" width="300" height="65" />
           </Link>
           <p>
             Medzinity is a technology & data driven company providing healthcare
@@ -34,7 +28,6 @@ function Footer() {
             <li><Link to="/about-us#believe">What We Believe</Link></li>
             <li><Link to="/about-us#ensure">What We Ensure</Link></li>
             <li><Link to="/about-us#Joinus">Join Us</Link></li>
-            <li><Link to="/medzian-community">Medzian Community</Link></li>
           </ul>
         </div>
 
