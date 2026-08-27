@@ -7,12 +7,11 @@ import SectionHeader from '../components/SectionHeader.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
 import HeroCarousel from '../components/HeroCarousel.jsx'
+import TaglinePanel from '../components/TaglinePanel.jsx'
 import IndustryShowcase from '../components/IndustryShowcase.jsx'
-import ClienteleOrbit from '../components/ClienteleOrbit.jsx'
 import * as Icons from '../components/icons.jsx'
 import { useSEO } from '../hooks/useSEO.js'
 
-import cardLawFirms from '../assets/cards/card-law-firms.webp'
 import cardMedicoLegal from '../assets/cards/card-medico-legal.webp'
 import cardInsight from '../assets/cards/card-insight.webp'
 import cardInsurance from '../assets/cards/card-insurance.webp'
@@ -83,12 +82,15 @@ function Home() {
     },
   ]
 
-  const heroCards = [
-    { image: cardLawFirms, tag: 'Industry', title: 'Law Firms: turning medical records into defensible evidence', to: '/industries/law-firms' },
-    { image: cardMedicoLegal, tag: 'Service', title: 'Medico-Legal Services — from chronology to trial-ready evidence', to: '/services/medico-legal-services' },
-    { image: cardInsight, tag: featuredInsights[0].category, title: featuredInsights[0].title, href: featuredInsights[0].url },
-    { image: cardInsurance, tag: 'Industry', title: 'Insurance Companies: faster claims, fewer errors', to: '/industries/insurance-companies' },
-  ]
+  // The banner cards mirror the three featured services, so the hero and the
+  // Services section below it stay in step if that list ever changes.
+  const serviceCardImages = [cardInsight, cardInsurance, cardMedicoLegal]
+  const heroCards = featuredServices.map((service, i) => ({
+    image: serviceCardImages[i],
+    tag: 'Service',
+    title: service.title,
+    to: `/services/${service.slug}`,
+  }))
 
   const industryTiles = [
     { label: 'Healthcare Providers', image: tileHealthcareProviders, to: '/industries/healthcare-providers' },
@@ -104,28 +106,7 @@ function Home() {
 
       <section className="section">
         <div className="container split-section">
-          <div className="split-art" aria-hidden="true">
-            <svg viewBox="0 0 220 160" width="82%" fill="none">
-              <circle cx="40" cy="40" r="5" fill="var(--primary)" />
-              <circle cx="110" cy="24" r="4" fill="var(--mid-blue)" />
-              <circle cx="180" cy="52" r="6" fill="var(--navy)" />
-              <circle cx="60" cy="110" r="4" fill="var(--mid-blue)" />
-              <circle cx="150" cy="120" r="5" fill="var(--primary)" />
-              <circle cx="30" cy="150" r="3.5" fill="var(--navy)" />
-              <path
-                d="M40 40 110 24 180 52 150 120 60 110 40 40M110 24 60 110M150 120 30 150"
-                stroke="var(--border-strong)"
-                strokeWidth="1.4"
-              />
-              <path
-                d="M10 90h30l8-24 12 48 10-36 8 20h140"
-                stroke="var(--primary)"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
+          <TaglinePanel />
           <Reveal delay={1}>
             <span className="eyebrow">About Medzinity</span>
             <h2 style={{ fontSize: 'clamp(26px, 3vw, 38px)', marginTop: 14 }}>
@@ -196,17 +177,6 @@ function Home() {
             lede="Our specialists are skilled, efficient, and attuned to the compliance and workflow needs of each industry we serve."
             items={industryTiles}
           />
-        </div>
-      </section>
-
-      <section className="section section-soft">
-        <div className="container">
-          <SectionHeader
-            eyebrow="Clientele"
-            title="Who we work with"
-            description="Providers, attorneys, insurers and life-science teams all work from the same medical record. Medzinity sits in the middle of that exchange — turning one set of data into the format each side can act on."
-          />
-          <ClienteleOrbit />
         </div>
       </section>
 

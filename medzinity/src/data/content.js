@@ -68,23 +68,31 @@ export const whatWeDo = [
   },
 ]
 
+// The brand tagline broken into its three beats — drives the About panel on Home.
+// Wording is pulled from Medzinity's own values and vision copy below.
+export const taglineBeats = [
+  {
+    icon: 'IconFlask',
+    title: 'Innovate',
+    desc: 'Always looking for new ways to use technology to improve healthcare.',
+  },
+  {
+    icon: 'IconUsers',
+    title: 'Empower',
+    desc: 'Global enterprises strengthened through data insights and strategic partnerships.',
+  },
+  {
+    icon: 'IconLifecycle',
+    title: 'Evolve',
+    desc: 'A healthcare ecosystem that keeps pace — governed by policy and ethical values.',
+  },
+]
+
 export const stats = [
   { value: 10, suffix: '+', label: 'Years of Experience' },
   { value: 120, suffix: '+', label: 'Clients' },
   { value: 2830, suffix: '+', label: 'Projects' },
   { value: 100, suffix: '%', label: 'Compliance' },
-]
-
-// Home page "Clientele" orbit — the parties Medzinity sits between. Rendered in
-// array order clockwise from the top, so the sequence here is the layout.
-// Clinical research has no destination page on medzinity.com, so it stays unlinked.
-export const clientele = [
-  { label: 'Healthcare providers', icon: 'IconHospital', to: '/industries/healthcare-providers' },
-  { label: 'Law firms', icon: 'IconBuilding', to: '/industries/law-firms' },
-  { label: 'Insurance companies', icon: 'IconShield', to: '/industries/insurance-companies' },
-  { label: 'Pharma companies', icon: 'IconFlask', to: '/industries/pharma-medical-device-companies' },
-  { label: 'Medical device companies', icon: 'IconPulse', to: '/industries/pharma-medical-device-companies' },
-  { label: 'Clinical research', icon: 'IconBeaker', to: null },
 ]
 
 export const services = [
