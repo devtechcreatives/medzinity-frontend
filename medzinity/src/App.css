@@ -126,6 +126,12 @@
   flex: none;
 }
 
+@media (max-width: 640px) {
+  .brand-logo {
+    height: 46px;
+  }
+}
+
 .brand-logo-sm {
   height: 32px;
 }
@@ -548,7 +554,10 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 66px 0 30px;
+  /* padding-top/bottom only — this element also carries .container, and a
+     shorthand `padding` here would replace its left/right 28px with 0. */
+  padding-top: 66px;
+  padding-bottom: 30px;
 }
 
 .hero-banner-inner {
@@ -836,7 +845,9 @@
     border-bottom-right-radius: 260px;
   }
   .hero-cards-wrap {
-    margin-top: -50px;
+    /* -50px worked for the shortest slide copy but overlaps the pagination
+       controls once the title/lede wrap to more lines on narrower widths. */
+    margin-top: -10px;
     padding-bottom: 8px;
   }
   .hero-cards {
@@ -853,7 +864,8 @@
 
 @media (max-width: 640px) {
   .hero-banner-row {
-    padding: 64px 0 40px;
+    padding-top: 64px;
+    padding-bottom: 40px;
   }
   .hero-banner-shape {
     border-bottom-right-radius: 140px;
